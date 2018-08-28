@@ -384,9 +384,11 @@ Class Namaz {
          'vakitler' => array()
       );
 
+      $pattern = "<div id = \"tab-1\" class=\"w3-container w3-border nv-tab-content\" style=\"display:none\">";
+
       // Gelen veri var mı?
-      if(strpos($veri, "<div id=\"tab-1\" class=\"w3-container w3-border nv-tab-content\" style=\"display:none\">") !== FALSE) {
-         $bolme1 = explode("<div id=\"tab-1\" class=\"w3-container w3-border nv-tab-content\" style=\"display:none\">", $veri);
+      if(strpos($veri, $pattern) !== FALSE) {
+         $bolme1 = explode($pattern, $veri);
          $elimizde_kalan = explode("</section>", $bolme1[1]);
          $html = str_get_html($elimizde_kalan[0]);
 
